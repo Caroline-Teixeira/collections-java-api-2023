@@ -5,13 +5,6 @@ import java.util.Set;
 
 public class UniqueWords {
 
-    /*Crie uma classe chamada "ConjuntoPalavrasUnicas" que possui um conjunto de palavras únicas como atributo. Implemente os seguintes métodos:
-
-- `adicionarPalavra(String palavra)`: Adiciona uma palavra ao conjunto.
-- `removerPalavra(String palavra)`: Remove uma palavra do conjunto.
-- `verificarPalavra(String palavra)`: Verifica se uma palavra está presente no conjunto.
-- `exibirPalavrasUnicas()`: Exibe todas as palavras únicas do conjunto.
-</p> */
 
  private Set<String> uniqueWordsSet;
 
@@ -29,6 +22,7 @@ public class UniqueWords {
  // Remover palavras.
 public void removeWord(String word){
     String wordToRemove = null;
+    
     for (String w : uniqueWordsSet){
         if (w.equals(word)) {
             wordToRemove = w;
@@ -40,13 +34,53 @@ public void removeWord(String word){
     }
 }
 
-public void checkWord (String word){
-
+public boolean checkWord (String word){
+    if (uniqueWordsSet.isEmpty()) {
+        throw new RuntimeException("A lista está vazia.");
+    }
+    else{
+        if (uniqueWordsSet.contains(word)){
+            System.out.println("A palavra \"" + word + "\" está presente no conjunto.");
+            return true;
+        } else {
+            System.out.println("A palavra \"" + word + "\" NÃO está presente no conjunto.");
+            return false;
+        }
+    }
+    
 }
 
 public void printUniqueWords (){
-    
+     System.out.println(uniqueWordsSet);
 }
  
+public static void main(String[] args) {
+    
+    UniqueWords wordsSet = new UniqueWords();
+    System.out.println("Lista de palavras únicas:");
+    wordsSet.printUniqueWords();
+    System.out.println("----------------------");
 
+    System.out.println("Adicionando palavras...");
+    wordsSet.addWord("Terra");
+    wordsSet.addWord("Sol");
+    wordsSet.addWord("Lua");
+    wordsSet.addWord("Lua"); // repetida para testar
+    wordsSet.addWord("Marte");
+    System.out.println("Lista de palavras únicas:");
+    wordsSet.printUniqueWords();
+    System.out.println("----------------------");
+
+
+    System.out.println("Removendo palavras...");
+    wordsSet.removeWord("Lua");
+    wordsSet.printUniqueWords();
+    System.out.println("----------------------");
+
+
+    wordsSet.checkWord("Sol");
+    wordsSet.checkWord("Mercúrio");
+    System.out.println("----------------------");
+
+}
 }
