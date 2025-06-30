@@ -35,7 +35,7 @@ public class SetGuests {
     }
 
     public void printGuests() {
-        System.out.println("Lista de convidados: " + guestList);
+        System.out.println("Agenda de contatos: " + guestList);
     }
 
     
