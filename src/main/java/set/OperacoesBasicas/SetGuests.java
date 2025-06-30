@@ -53,6 +53,7 @@ public class SetGuests {
         guests.addGuest("Renan", 4);
         guests.addGuest("Sarah", 5);
         guests.addGuest("Leon", 6);
+        guests.addGuest("Lion", 6); // para verificar erro e se aparece na lista
 
         guests.printGuests();
         System.out.println("----------------");

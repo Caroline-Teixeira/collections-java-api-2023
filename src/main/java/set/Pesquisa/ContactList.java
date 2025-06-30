@@ -65,6 +65,7 @@ public class ContactList {
         contact.addContact("Leon Kennedy", 98999997);
         contact.addContact("Maria Lourdes", 98999897);
         contact.addContact("Maria Souza", 98898896);
+        contact.addContact("Maria Souza", 98895896); // repetido pra testar
         contact.showContacts();
         System.out.println("-----------");
 
