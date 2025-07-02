@@ -30,7 +30,7 @@ public class ProductStorage {
         }
     }
 
-    // tootal no estoque
+    // total no estoque
     public double storageTotal(){
         double totalStorageValue = 0d; // variavel para armazenar o valor total
         if(!productsInStorage.isEmpty()){
@@ -44,7 +44,7 @@ public class ProductStorage {
 
     public Product getExpensiveProduct(){
        Product expensiveProduct = null;
-       double expensiveValue = Double.MIN_VALUE;
+       double expensiveValue = Double.MIN_VALUE; // Se quero achar o mais caro, começo com o menor valor possível.
         if (!productsInStorage.isEmpty()){
             for(Product e : productsInStorage.values()){
                 if(e.getPrice() > expensiveValue ){
@@ -64,7 +64,7 @@ public class ProductStorage {
 
     public Product getTheCheapestProduct (){
     Product cheapestProduct = null;
-    double cheapestValue = Double.MAX_VALUE;
+    double cheapestValue = Double.MAX_VALUE; // Se quero achar o mais barato, começo com o maior valor possível.
         if (!productsInStorage.isEmpty()){
             for(Product c : productsInStorage.values()){
                 if(c.getPrice() < cheapestValue ){
